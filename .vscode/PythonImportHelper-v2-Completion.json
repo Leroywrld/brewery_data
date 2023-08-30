@@ -1,0 +1,101 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "page",
+        "kind": 5,
+        "importPath": "fetch_breweries",
+        "description": "fetch_breweries",
+        "peekOfCode": "page = 1\nresponses = []\nurl = \"https://api.openbrewerydb.org/v1/breweries\"\npayload = {'page':page, 'per_page':125}\nheaders = {}\n##iterate over 50 pages pulling 125 records for each page\nwhile page < 50:\n    page = page + 1\n    response = requests.request(\"GET\", url, headers=headers, data=payload).json()\n    responses.extend(response)",
+        "detail": "fetch_breweries",
+        "documentation": {}
+    },
+    {
+        "label": "responses",
+        "kind": 5,
+        "importPath": "fetch_breweries",
+        "description": "fetch_breweries",
+        "peekOfCode": "responses = []\nurl = \"https://api.openbrewerydb.org/v1/breweries\"\npayload = {'page':page, 'per_page':125}\nheaders = {}\n##iterate over 50 pages pulling 125 records for each page\nwhile page < 50:\n    page = page + 1\n    response = requests.request(\"GET\", url, headers=headers, data=payload).json()\n    responses.extend(response)\n##convert the list of responses to a pandas dataframe",
+        "detail": "fetch_breweries",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "fetch_breweries",
+        "description": "fetch_breweries",
+        "peekOfCode": "url = \"https://api.openbrewerydb.org/v1/breweries\"\npayload = {'page':page, 'per_page':125}\nheaders = {}\n##iterate over 50 pages pulling 125 records for each page\nwhile page < 50:\n    page = page + 1\n    response = requests.request(\"GET\", url, headers=headers, data=payload).json()\n    responses.extend(response)\n##convert the list of responses to a pandas dataframe\nframes = []",
+        "detail": "fetch_breweries",
+        "documentation": {}
+    },
+    {
+        "label": "payload",
+        "kind": 5,
+        "importPath": "fetch_breweries",
+        "description": "fetch_breweries",
+        "peekOfCode": "payload = {'page':page, 'per_page':125}\nheaders = {}\n##iterate over 50 pages pulling 125 records for each page\nwhile page < 50:\n    page = page + 1\n    response = requests.request(\"GET\", url, headers=headers, data=payload).json()\n    responses.extend(response)\n##convert the list of responses to a pandas dataframe\nframes = []\nfor r in responses:",
+        "detail": "fetch_breweries",
+        "documentation": {}
+    },
+    {
+        "label": "headers",
+        "kind": 5,
+        "importPath": "fetch_breweries",
+        "description": "fetch_breweries",
+        "peekOfCode": "headers = {}\n##iterate over 50 pages pulling 125 records for each page\nwhile page < 50:\n    page = page + 1\n    response = requests.request(\"GET\", url, headers=headers, data=payload).json()\n    responses.extend(response)\n##convert the list of responses to a pandas dataframe\nframes = []\nfor r in responses:\n    frames.append(r)",
+        "detail": "fetch_breweries",
+        "documentation": {}
+    },
+    {
+        "label": "frames",
+        "kind": 5,
+        "importPath": "fetch_breweries",
+        "description": "fetch_breweries",
+        "peekOfCode": "frames = []\nfor r in responses:\n    frames.append(r)\nbreweries = pd.DataFrame(frames)\n## save the dataframe to memory as a csv\nbreweries.to_csv('open_breweries_US.csv')",
+        "detail": "fetch_breweries",
+        "documentation": {}
+    },
+    {
+        "label": "breweries",
+        "kind": 5,
+        "importPath": "fetch_breweries",
+        "description": "fetch_breweries",
+        "peekOfCode": "breweries = pd.DataFrame(frames)\n## save the dataframe to memory as a csv\nbreweries.to_csv('open_breweries_US.csv')",
+        "detail": "fetch_breweries",
+        "documentation": {}
+    }
+]
